@@ -1,4 +1,3 @@
-// ThreeDModel.jsx
 import React, { useEffect } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
@@ -9,7 +8,6 @@ const Model = () => {
 
   const box = new THREE.Box3().setFromObject(scene);
   const centroid = box.getCenter(new THREE.Vector3());
-  
   scene.position.sub(centroid);
 
   return <primitive object={scene} scale={0.5} />;
@@ -20,10 +18,9 @@ const ThreeDModel = () => {
     const { camera } = useThree();
     useEffect(() => {
       camera.position.set(10, 1, 2);
-      camera.zoom = 0.9;           
-      camera.fov = 70;              
-      camera.near = 0.1;           
-      camera.far = 1000;          
+      camera.fov = 70;
+      camera.near = 0.1;
+      camera.far = 1000;
       camera.updateProjectionMatrix();
     }, [camera]);
     return null;
@@ -32,7 +29,7 @@ const ThreeDModel = () => {
   return (
     <Canvas>
       <CameraSettings />
-      <OrbitControls />
+      <OrbitControls target={[0, 0, 0]} /> 
       <ambientLight intensity={0.5} />
       <directionalLight position={[5, 5, 5]} intensity={1} />
       <Model />

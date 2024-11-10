@@ -7,7 +7,7 @@ const HomePage = () => {
   return (
     <div className="main">
       <div className="container flex items-center justify-center mx-40 flex-col">
-        <div className="hero pt-12 self-start flex items-center justify-center flex-col gap-3 place-self-end">
+        <div className="hero pt-40 pb-40 self-start flex items-center justify-center flex-col gap-3 place-self-end">
           <img
             src="/assets/logo2.png"
             alt="Some error occurred"
