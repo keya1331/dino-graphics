@@ -6,3 +6,7 @@ Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+This is a project made as part of the course *Computer Graphics* at SVNIT, Surat. This is a project that focuses on the syllabus, and the various topics within Computer Graphics, using *Dinosaurs*!! 
+
+Made using ReactJS, Tailwind CSS, and more ;).
