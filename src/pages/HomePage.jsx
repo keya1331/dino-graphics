@@ -25,7 +25,7 @@ const HomePage = () => {
         </div>
 
         <div className="navigator flex">
-          <div className="sticky top-0 border w-[30vw] h-[100vh]">
+          <div className="sticky top-0 w-[30vw] h-[100vh]">
             <ThreeDModel />
           </div>
 
