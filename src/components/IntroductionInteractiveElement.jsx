@@ -16,10 +16,8 @@ const IntroductionInteractiveElement = () => {
           <directionalLight intensity={1} position={[5, 5, 5]} />
           <directionalLight intensity={0.5} position={[-5, -5, 5]} />
 
-          {/* Dino Model */}
           <DinoModel />
 
-          {/* Controls */}
           <OrbitControls enableZoom={true} />
         </Canvas>
       </div>
