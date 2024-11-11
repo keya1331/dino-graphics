@@ -1,7 +1,6 @@
-// HomePage.jsx
 import React from "react";
 import Chaptertitle from "../components/Chaptertitle";
-import ThreeDModel from "../components/ThreeDModel";
+import HomeIndominus from "../components/HomePageIndominus.jsx";
 
 const HomePage = () => {
   return (
@@ -26,7 +25,7 @@ const HomePage = () => {
 
         <div className="navigator flex">
           <div className="sticky top-0 w-[30vw] h-[100vh]">
-            <ThreeDModel />
+            <HomeIndominus />
           </div>
 
           <div className="titles flex flex-col justify-center items-center py-24 px-12 gap-12">
