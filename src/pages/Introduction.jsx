@@ -3,7 +3,6 @@ import SectionPage from "../components/TemplatePageHeader";
 import IntroductionInteractiveElement from "../components/IntroductionInteractiveElement";
 
 const Introduction = () => (
-  <>
     <div className="main flex flex-col items-center justify-center">
       <SectionPage
         sectionTitle="Introduction"
@@ -13,8 +12,8 @@ const Introduction = () => (
       />
 
       <IntroductionInteractiveElement />
+
     </div>
-  </>
 );
 
 export default Introduction;

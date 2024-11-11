@@ -57,7 +57,7 @@ const TemplatePageHeader = ({ sectionTitle, sectionNumber, sectionDescription, c
           />
         </div>
 
-        <div className="navigation-arrows flex justify-between w-full fixed bottom-10 px-10">
+        <div className="navigation-arrows flex justify-between w-full fixed bottom-10 px-10 z-50">
           <button
             className="text-[#e8f3fe] text-3xl"
             onClick={handlePrevious}
