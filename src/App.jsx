@@ -6,6 +6,7 @@ import GraphicsPrimitives from './pages/GraphicsPrimitives'
 import Transformations from './pages/Transformations'
 import Projection from './pages/Projection'
 import AdvancedTopics from './pages/AdvancedTopics'
+import Clipping from "./pages/Clipping";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/GraphicsPrimitives" element={<GraphicsPrimitives />} />
           <Route path="/Transformations" element={<Transformations />} />
           <Route path="/Projection" element={<Projection />} />
+          <Route path="/Clipping" element={<Clipping />} />
           <Route path="/AdvancedTopics" element={<AdvancedTopics />} />
         </Routes>
       </Router>

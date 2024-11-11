@@ -39,3 +39,16 @@
 .right {
     @apply w-1/3 self-start 
 }
+
+
+/* Arrow button styling */
+.navigation-arrows button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.navigation-arrows button:hover {
+    transform: scale(1.1);
+}
