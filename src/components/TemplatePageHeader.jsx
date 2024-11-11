@@ -33,7 +33,6 @@ const TemplatePageHeader = ({ sectionTitle, sectionNumber, sectionDescription, c
   };
 
   return (
-    <div className="main flex flex-col items-center justify-center">
       <div className="container flex flex-col items-center justify-center mx-40 gap-4">
         
         <div className="hero pt-40 pb-20 flex flex-col items-center justify-center gap-3">
@@ -49,7 +48,6 @@ const TemplatePageHeader = ({ sectionTitle, sectionNumber, sectionDescription, c
             DINO GRAPHICS
           </p>
         </div>
-
         
         <div className="content flex flex-col items-center gap-6 text-center">
           <Chaptertitle
@@ -83,7 +81,6 @@ const TemplatePageHeader = ({ sectionTitle, sectionNumber, sectionDescription, c
           </button>
         </div>
       </div>
-    </div>
   );
 };
 
