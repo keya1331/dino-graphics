@@ -5,7 +5,6 @@ import IntroductionInteractiveElement from "../components/IntroductionInteractiv
 const Introduction = () => (
   <div className="main">
     <div className="w-[50vw] flex flex-col items-center justify-center space-y-16 px-6 py-12">
-      
       <SectionPage
         sectionTitle="Introduction"
         sectionNumber="01"
@@ -21,7 +20,10 @@ const Introduction = () => (
         <section className="overview">
           <h2 className="section-heading">Overview</h2>
           <p className="section-description">
-            Computer Graphics is the field that transforms data into visual representations, enabling the creation, manipulation, and display of visual information. It plays a key role in fields like design, animation, gaming, and user interface development.
+            Computer Graphics is the field that transforms data into visual
+            representations, enabling the creation, manipulation, and display of
+            visual information. It plays a key role in fields like design,
+            animation, gaming, and user interface development.
           </p>
         </section>
 
@@ -30,11 +32,17 @@ const Introduction = () => (
           <div className="classification-types space-y-8">
             <div className="classification-item">
               <h3 className="subheading">Interactive Graphics</h3>
-              <p className="section-description">Enables user-controlled content and outcomes, such as video games and simulations.</p>
+              <p className="section-description">
+                Enables user-controlled content and outcomes, such as video
+                games and simulations.
+              </p>
             </div>
             <div className="classification-item">
               <h3 className="subheading">Non-Interactive Graphics</h3>
-              <p className="section-description">Pre-rendered visuals where no interaction is required, often seen in presentations and animated movies.</p>
+              <p className="section-description">
+                Pre-rendered visuals where no interaction is required, often
+                seen in presentations and animated movies.
+              </p>
             </div>
           </div>
         </section>
@@ -52,7 +60,8 @@ const Introduction = () => (
         <section className="coordinates">
           <h2 className="section-heading">Coordinate Representation</h2>
           <p className="section-description">
-            Coordinate systems define object placement. Graphics use both 2D Cartesian coordinates (x, y) and 3D Cartesian coordinates (x, y, z).
+            Coordinate systems define object placement. Graphics use both 2D
+            Cartesian coordinates (x, y) and 3D Cartesian coordinates (x, y, z).
           </p>
         </section>
 
@@ -61,19 +70,29 @@ const Introduction = () => (
           <div className="scan-types space-y-8">
             <div className="scan-item">
               <h3 className="subheading">Raster Scan</h3>
-              <p className="section-description">Common in displays, draws the screen line-by-line from top to bottom.</p>
+              <p className="section-description">
+                Common in displays, draws the screen line-by-line from top to
+                bottom.
+              </p>
             </div>
             <div className="scan-item">
               <h3 className="subheading">Random Scan</h3>
-              <p className="section-description">Used in vector displays, draws lines directly between specified points for high precision.</p>
+              <p className="section-description">
+                Used in vector displays, draws lines directly between specified
+                points for high precision.
+              </p>
             </div>
+          </div>
+          <div className="content-image">
+            <img src="/assets/raster-random-displays.png" alt="" />
           </div>
         </section>
 
         <section className="video-basics">
           <h2 className="section-heading">Video Basics</h2>
           <p className="section-description">
-            Covers how images are displayed on screens, including aspects like frame rates, resolution, and color depth.
+            Covers how images are displayed on screens, including aspects like
+            frame rates, resolution, and color depth.
           </p>
         </section>
 
@@ -82,50 +101,145 @@ const Introduction = () => (
           <div className="device-list space-y-8">
             <h3 className="subheading">Display Devices:</h3>
             <ul className="devices">
-              <li><strong>CRT:</strong> Older tech using electron beams.</li>
-              <li><strong>LCD:</strong> Uses liquid crystals and backlighting, common in most devices today.</li>
-              <li><strong>LED:</strong> Energy-efficient and widely used.</li>
+              <li>
+                <strong>CRT:</strong> Older tech using electron beams.
+              </li>
+              <li>
+                <strong>LCD:</strong> Uses liquid crystals and backlighting,
+                common in most devices today.
+              </li>
+              <li>
+                <strong>LED:</strong> Energy-efficient and widely used.
+              </li>
             </ul>
 
             <h3 className="subheading">Interactive Devices:</h3>
             <ul className="devices">
-              <li>Input tools like mouse, keyboard, stylus for screen manipulation.</li>
+              <li>
+                Input tools like mouse, keyboard, stylus for screen
+                manipulation.
+              </li>
             </ul>
           </div>
         </section>
 
         <section className="digital-images">
-          <h2 className="section-heading">Digital Images, Image Formation, Representation, and Modeling</h2>
+          <h2 className="section-heading">
+            Digital Images, Image Formation, Representation, and Modeling
+          </h2>
           <p className="section-description">
-            <strong>Digital Images:</strong> Composed of pixels, each representing a portion of the image.
+            <strong>Digital Images:</strong> Composed of pixels, each
+            representing a portion of the image.
           </p>
           <p className="section-description">
-            <strong>Image Formation:</strong> Process by which digital sensors or algorithms capture and display images.
+            <strong>Image Formation:</strong> Process by which digital sensors
+            or algorithms capture and display images.
           </p>
           <p className="section-description">
-            <strong>Image Representation:</strong> Encodes images as bitmap or vector data.
+            <strong>Image Representation:</strong> Encodes images as bitmap or
+            vector data.
           </p>
           <p className="section-description">
-            <strong>Modeling:</strong> Builds digital object representations for animation and visualization.
+            <strong>Modeling:</strong> Builds digital object representations for
+            animation and visualization.
           </p>
         </section>
 
         <section className="applications">
           <h2 className="section-heading">Overview of Applications</h2>
           <ul className="applications-list">
-            <li><strong>Entertainment:</strong> Animation, visual effects, gaming</li>
-            <li><strong>Education:</strong> Interactive tutorials, simulations</li>
-            <li><strong>Healthcare:</strong> Medical imaging, surgery simulations</li>
-            <li><strong>Engineering and Design:</strong> CAD for architectural and mechanical design</li>
+            <li>
+              <strong>Entertainment:</strong> Animation, visual effects, gaming
+            </li>
+            <li>
+              <strong>Education:</strong> Interactive tutorials, simulations
+            </li>
+            <li>
+              <strong>Healthcare:</strong> Medical imaging, surgery simulations
+            </li>
+            <li>
+              <strong>Engineering and Design:</strong> CAD for architectural and
+              mechanical design
+            </li>
           </ul>
         </section>
 
         <section className="software">
           <h2 className="section-heading">Graphics Libraries & Software</h2>
           <p className="section-description">
-            Libraries like <strong>OpenGL</strong>, <strong>WebGL</strong>, and <strong>DirectX</strong> support graphics development. Software like <strong>Photoshop</strong>, <strong>Blender</strong>, and <strong>AutoCAD</strong> are essential tools for graphic design and modeling.
+            Libraries like <strong>OpenGL</strong>, <strong>WebGL</strong>, and{" "}
+            <strong>DirectX</strong> support graphics development. Software like{" "}
+            <strong>Photoshop</strong>, <strong>Blender</strong>, and{" "}
+            <strong>AutoCAD</strong> are essential tools for graphic design and
+            modeling.
           </p>
         </section>
+
+        <div className="learn-more">
+          <h3 className="section-heading">If you want to learn more</h3>
+          <ul className="links-list">
+            <li>
+              <a
+                href="https://www.geeksforgeeks.org/computer-graphics-2/"
+                className="custom-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Introduction to Computer Graphics - GeeksforGeeks
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.tutorialspoint.com/computer_graphics/computer_graphics_basics.htm"
+                className="custom-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Types of Computer Graphics - TutorialsPoint
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.britannica.com/technology/computer-graphics"
+                className="custom-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Computer Graphics Overview - Britannica
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.cs.cmu.edu/research/computer-graphics"
+                className="custom-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Computer Graphics Research - Carnegie Mellon University
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.geeksforgeeks.org/applications-of-computer-graphics/"
+                className="custom-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Applications of Computer Graphics - GeeksforGeeks
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://developer.nvidia.com/graphics"
+                className="custom-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Graphics and AI - NVIDIA Developer
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
