@@ -156,3 +156,8 @@
 .custom-link:hover {
   color: #5b9dff;
 }
+
+pre {
+  font-size: 0.9rem;
+  border-radius: 0.375rem;
+}

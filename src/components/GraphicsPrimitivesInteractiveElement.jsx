@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-import { FaDrawPolygon, FaCircle, FaPen, FaEraser } from "react-icons/fa"; // You can import icons for shapes
 
 const bresenhamLine = (x0, y0, x1, y1, ctx) => {
   let dx = Math.abs(x1 - x0);
@@ -45,10 +44,37 @@ const midpointCircle = (cx, cy, r, ctx) => {
   }
 };
 
+const scanlineFill = (points, ctx) => {
+  const minY = Math.min(...points.map(p => p.y));
+  const maxY = Math.max(...points.map(p => p.y));
+
+  for (let y = minY; y <= maxY; y++) {
+    const intersections = [];
+    for (let i = 0; i < points.length; i++) {
+      const p1 = points[i];
+      const p2 = points[(i + 1) % points.length];
+      if ((p1.y <= y && p2.y > y) || (p2.y <= y && p1.y > y)) {
+        const x = p1.x + ((y - p1.y) / (p2.y - p1.y)) * (p2.x - p1.x);
+        intersections.push(x);
+      }
+    }
+    intersections.sort((a, b) => a - b);
+
+    for (let i = 0; i < intersections.length; i += 2) {
+      const x1 = intersections[i];
+      const x2 = intersections[i + 1];
+      for (let x = x1; x <= x2; x++) {
+        ctx.fillRect(x, y, 1, 1);
+      }
+    }
+  }
+};
+
 const GraphicsPrimitivesInteractiveElement = () => {
   const canvasRef = useRef(null);
   const [points, setPoints] = useState([]);
   const [shape, setShape] = useState("line");
+  const [fill, setFill] = useState("noFill");
 
   const handleCanvasClick = (e) => {
     const canvas = canvasRef.current;
@@ -67,8 +93,8 @@ const GraphicsPrimitivesInteractiveElement = () => {
   const redrawCanvas = (points, ctx) => {
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
+    ctx.fillStyle = "#e0e0e0";
     points.forEach((point) => {
-      ctx.fillStyle = "black";
       ctx.fillRect(point.x, point.y, 3, 3);
     });
 
@@ -90,8 +116,12 @@ const GraphicsPrimitivesInteractiveElement = () => {
         ctx.lineTo(point.x, point.y);
       });
       ctx.closePath();
-      ctx.strokeStyle = "black";
+      ctx.strokeStyle = "#e0e0e0";
       ctx.stroke();
+
+      if (fill === "fill") {
+        scanlineFill(points, ctx);
+      }
     }
   };
 
@@ -103,42 +133,66 @@ const GraphicsPrimitivesInteractiveElement = () => {
   };
 
   return (
-    <div className="flex">
-      <div className="flex flex-col items-center w-20 bg-gray-200 p-4">
-        <div
-          onClick={() => setShape("line")}
-          className="cursor-pointer p-2 hover:bg-gray-300"
-        >
-          <FaPen size={24} />
-        </div>
-        <div
-          onClick={() => setShape("circle")}
-          className="cursor-pointer p-2 hover:bg-gray-300"
-        >
-          <FaCircle size={24} />
-        </div>
-        <div
-          onClick={() => setShape("polygon")}
-          className="cursor-pointer p-2 hover:bg-gray-300"
-        >
-          <FaDrawPolygon size={24} />
-        </div>
-        <div
-          onClick={clearCanvas}
-          className="cursor-pointer p-2 hover:bg-red-500 hover:text-white mt-4"
-        >
-          <FaEraser size={24} />
-        </div>
-      </div>
-
-      <div className="flex flex-col items-center ml-4">
+    <div className="flex flex-col items-center justify-center py-10 px-4 space-y-8 text-gray-100">
+      <div className="relative">
         <canvas
           ref={canvasRef}
           width={600}
           height={400}
           onClick={handleCanvasClick}
-          style={{ border: "1px solid black", backgroundColor: "#f0f0f0" }}
+          className="border border-gray-700 rounded-lg shadow-md"
+          style={{ backgroundColor: "#1a1a1a" }}
         ></canvas>
+        <div className="absolute top-2 left-2 px-2 py-1 bg-gray-800 text-xs font-medium text-gray-300 rounded-md shadow-md">
+          Click to draw
+        </div>
+      </div>
+
+      <div className="flex items-center space-x-4">
+        <label className="text-sm font-medium">Shape:</label>
+        <select
+          onChange={(e) => setShape(e.target.value)}
+          className="bg-gray-800 text-gray-300 border border-gray-700 rounded-md px-3 py-1 shadow-sm focus:outline-none focus:ring focus:ring-gray-600"
+        >
+          <option value="line">Line</option>
+          <option value="circle">Circle</option>
+          <option value="polygon">Polygon</option>
+        </select>
+
+        <label className="text-sm font-medium">Fill:</label>
+        <select
+          onChange={(e) => setFill(e.target.value)}
+          className="bg-gray-800 text-gray-300 border border-gray-700 rounded-md px-3 py-1 shadow-sm focus:outline-none focus:ring focus:ring-gray-600"
+        >
+          <option value="noFill">No Fill</option>
+          <option value="fill">Fill</option>
+        </select>
+
+        <button
+          onClick={clearCanvas}
+          className="bg-red-500 hover:bg-red-600 text-white px-4 py-1.5 rounded-md shadow-sm font-medium transition-all duration-200"
+        >
+          Clear
+        </button>
+      </div>
+
+      <div className="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-lg">
+        <h2 className="text-xl font-semibold text-gray-300 mb-4">How to Use</h2>
+        <p className="text-sm text-gray-400 mb-2">
+          1. Click anywhere on the canvas to start drawing.
+        </p>
+        <p className="text-sm text-gray-400 mb-2">
+          2. Choose a shape from the dropdown menu (Line, Circle, or Polygon).
+        </p>
+        <p className="text-sm text-gray-400 mb-2">
+          3. If you select "Polygon", click to add points. The polygon will be completed when the last point connects to the first point.
+        </p>
+        <p className="text-sm text-gray-400 mb-2">
+          4. Toggle the "Fill" option to fill the shape with color.
+        </p>
+        <p className="text-sm text-gray-400">
+          5. Click "Clear" to reset the canvas and start fresh.
+        </p>
       </div>
     </div>
   );
