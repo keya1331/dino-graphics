@@ -1,5 +1,6 @@
 import React from "react";
 import SectionPage from "../components/TemplatePageHeader";
+import GraphicsPrimitivesInteractiveElement from "../components/GraphicsPrimitivesInteractiveElement";
 
 const GraphicsPrimitives = () => (
   <div className="main flex flex-col items-center justify-center">
@@ -9,6 +10,10 @@ const GraphicsPrimitives = () => (
       sectionDescription="Fundamentals of lines, shapes, and polygons. Learn algorithms for drawing and filling."
       currentSection="GraphicsPrimitives"
     />
+
+    <div className="InteractiveElement">
+      <GraphicsPrimitivesInteractiveElement />
+    </div>
   </div>
 );
 
