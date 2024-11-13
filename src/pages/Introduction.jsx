@@ -12,12 +12,12 @@ const Introduction = () => (
         currentSection="Introduction"
       />
 
-      <div className="w-[90%] h-[60vh] mx-auto">
+      <div className="w-[90%] h-[60vh] mx-auto animate-fadeIn">
         <IntroductionInteractiveElement />
       </div>
 
       <div className="content-container space-y-16">
-        <section className="overview">
+        <section className="overview animate-fadeIn">
           <h2 className="section-heading">Overview</h2>
           <p className="section-description">
             Computer Graphics is the field that transforms data into visual
@@ -27,17 +27,17 @@ const Introduction = () => (
           </p>
         </section>
 
-        <section className="classification">
+        <section className="classification animate-fadeIn">
           <h2 className="section-heading">Classification</h2>
           <div className="classification-types space-y-8">
-            <div className="classification-item">
+            <div className="classification-item animate-slideInLeft">
               <h3 className="subheading">Interactive Graphics</h3>
               <p className="section-description">
                 Enables user-controlled content and outcomes, such as video
                 games and simulations.
               </p>
             </div>
-            <div className="classification-item">
+            <div className="classification-item animate-slideInRight">
               <h3 className="subheading">Non-Interactive Graphics</h3>
               <p className="section-description">
                 Pre-rendered visuals where no interaction is required, often
@@ -47,7 +47,7 @@ const Introduction = () => (
           </div>
         </section>
 
-        <section className="characteristics">
+        <section className="characteristics animate-fadeIn">
           <h2 className="section-heading">Characteristics and Advantages</h2>
           <ul className="benefits-list">
             <li>Visualization of abstract data into comprehensible forms.</li>
@@ -57,7 +57,7 @@ const Introduction = () => (
           </ul>
         </section>
 
-        <section className="coordinates">
+        <section className="coordinates animate-fadeIn">
           <h2 className="section-heading">Coordinate Representation</h2>
           <p className="section-description">
             Coordinate systems define object placement. Graphics use both 2D
@@ -65,17 +65,17 @@ const Introduction = () => (
           </p>
         </section>
 
-        <section className="scan-methods">
+        <section className="scan-methods animate-fadeIn">
           <h2 className="section-heading">Raster Scan & Random Scan Methods</h2>
           <div className="scan-types space-y-8">
-            <div className="scan-item">
+            <div className="scan-item animate-slideInLeft">
               <h3 className="subheading">Raster Scan</h3>
               <p className="section-description">
                 Common in displays, draws the screen line-by-line from top to
                 bottom.
               </p>
             </div>
-            <div className="scan-item">
+            <div className="scan-item animate-slideInRight">
               <h3 className="subheading">Random Scan</h3>
               <p className="section-description">
                 Used in vector displays, draws lines directly between specified
@@ -83,12 +83,12 @@ const Introduction = () => (
               </p>
             </div>
           </div>
-          <div className="content-image">
+          <div className="content-image animate-fadeIn">
             <img src="/assets/raster-random-displays.png" alt="" />
           </div>
         </section>
 
-        <section className="video-basics">
+        <section className="video-basics animate-fadeIn">
           <h2 className="section-heading">Video Basics</h2>
           <p className="section-description">
             Covers how images are displayed on screens, including aspects like
@@ -96,7 +96,7 @@ const Introduction = () => (
           </p>
         </section>
 
-        <section className="devices">
+        <section className="devices animate-fadeIn">
           <h2 className="section-heading">Display and Interactive Devices</h2>
           <div className="device-list space-y-8">
             <h3 className="subheading">Display Devices:</h3>
@@ -123,7 +123,7 @@ const Introduction = () => (
           </div>
         </section>
 
-        <section className="digital-images">
+        <section className="digital-images animate-fadeIn">
           <h2 className="section-heading">
             Digital Images, Image Formation, Representation, and Modeling
           </h2>
@@ -145,7 +145,7 @@ const Introduction = () => (
           </p>
         </section>
 
-        <section className="applications">
+        <section className="applications animate-fadeIn">
           <h2 className="section-heading">Overview of Applications</h2>
           <ul className="applications-list">
             <li>
@@ -164,7 +164,7 @@ const Introduction = () => (
           </ul>
         </section>
 
-        <section className="software">
+        <section className="software animate-fadeIn">
           <h2 className="section-heading">Graphics Libraries & Software</h2>
           <p className="section-description">
             Libraries like <strong>OpenGL</strong>, <strong>WebGL</strong>, and{" "}
@@ -175,7 +175,7 @@ const Introduction = () => (
           </p>
         </section>
 
-        <div className="learn-more">
+        <div className="learn-more animate-fadeIn">
           <h3 className="section-heading">If you want to learn more</h3>
           <ul className="links-list">
             <li>
@@ -200,42 +200,12 @@ const Introduction = () => (
             </li>
             <li>
               <a
-                href="https://www.britannica.com/technology/computer-graphics"
-                className="custom-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Computer Graphics Overview - Britannica
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.cs.cmu.edu/research/computer-graphics"
-                className="custom-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Computer Graphics Research - Carnegie Mellon University
-              </a>
-            </li>
-            <li>
-              <a
                 href="https://www.geeksforgeeks.org/applications-of-computer-graphics/"
                 className="custom-link"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Applications of Computer Graphics - GeeksforGeeks
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://developer.nvidia.com/graphics"
-                className="custom-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Graphics and AI - NVIDIA Developer
               </a>
             </li>
           </ul>
