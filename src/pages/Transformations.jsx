@@ -7,7 +7,7 @@ const Transformations = () => (
     <div className="w-[50vw] flex flex-col items-center justify-center space-y-16 px-6 py-12">
       <SectionPage
         sectionTitle="2D and 3D Transformations"
-        sectionNumber="02"
+        sectionNumber="03"
         sectionDescription="Explores the fundamental concepts of 2D and 3D transformations such as translation, scaling, rotation, and shearing."
         currentSection="2D and 3D Transformations"
       />

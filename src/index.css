@@ -170,3 +170,7 @@ pre {
     @apply w-32;
   }
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
