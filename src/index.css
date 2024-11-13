@@ -161,3 +161,12 @@ pre {
   font-size: 0.9rem;
   border-radius: 0.375rem;
 }
+
+@layer utilities {
+  .input-field {
+    @apply bg-gray-700 text-white p-2 rounded-md w-20;
+  }
+  .slider {
+    @apply w-32;
+  }
+}
