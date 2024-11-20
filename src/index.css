@@ -33,7 +33,7 @@
 }
 
 .section-description {
-  @apply text-lg text-[#c5d3e0] leading-relaxed mb-8;
+  @apply text-lg text-[#c5d3e0] leading-relaxed mb-8 text-left;
 }
 
 .benefits-list,
@@ -126,7 +126,7 @@
   padding-bottom: 0.5rem;
   border-bottom: 1px solid rgba(224, 224, 224, 0.2);
   margin-bottom: 0.5rem;
-  text-align: center;
+  text-align: left;
 }
 
 /* Learn More Section */
@@ -169,4 +169,8 @@ pre {
   .slider {
     @apply w-32;
   }
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

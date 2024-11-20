@@ -16,7 +16,7 @@ const bresenhamLine = (x0, y0, x1, y1, ctx) => {
   }
 };
 
-const midpointCircle = (cx, cy, r, ctx) => {
+const midpocintCircle = (cx, cy, r, ctx) => {
   let x = r;
   let y = 0;
   let p = 1 - r;
@@ -27,7 +27,7 @@ const midpointCircle = (cx, cy, r, ctx) => {
     ctx.fillRect(cx + x, cy - y, 1, 1);
     ctx.fillRect(cx - x, cy - y, 1, 1);
     ctx.fillRect(cx + y, cy + x, 1, 1);
-    ctx.fillRect(cx - y, cy + x, 1, 1);
+    ctx.fillRect(cx - y, y + x, 1, 1);
     ctx.fillRect(cx + y, cy - x, 1, 1);
     ctx.fillRect(cx - y, cy - x, 1, 1);
   };
