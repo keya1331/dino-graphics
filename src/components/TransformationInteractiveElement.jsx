@@ -25,7 +25,10 @@ const TransformationsInteractiveElement = () => {
         }
         break;
       case "rotation":
-        setRotation((prev) => ({ ...prev, [axis]: value * 0.5 }));
+        setRotation((prev) => ({
+          ...prev,
+          [axis]: (value * Math.PI) / 180, // Convert to radians
+        }));
         break;
       case "translation":
         setTranslation((prev) => ({ ...prev, [axis]: value }));
@@ -107,7 +110,9 @@ const TransformationsInteractiveElement = () => {
               key={ax}
               onClick={() => handleAxisChange(ax)}
               className={`px-3 py-1 rounded-full ${
-                axis === ax ? "bg-blue-600 text-white" : "bg-gray-700 text-gray-300"
+                axis === ax
+                  ? "bg-blue-600 text-white"
+                  : "bg-gray-700 text-gray-300"
               } hover:bg-blue-500`}
             >
               {ax.toUpperCase()}
@@ -172,7 +177,10 @@ const TransformationsInteractiveElement = () => {
             <primitive object={scene} />
           </group>
 
-          <gridHelper args={[1000, 1000, 0xaaaaaa, 0x555555]} position={[0, 0, 0]} />
+          <gridHelper
+            args={[1000, 1000, 0xaaaaaa, 0x555555]}
+            position={[0, 0, 0]}
+          />
 
           <ambientLight intensity={0.7} />
           <directionalLight intensity={1.7} position={[0, 0, 5]} />
