@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SectionPage from "../components/TemplatePageHeader";
 import CodeBlock from "../components/CodeBlock";
 import GraphicsPrimitivesInteractiveElement from "../components/GraphicsPrimitivesInteractiveElement";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const algorithms = {
-  DDA: `
-function DDA(x1, y1, x2, y2) {
+  DDA: `function DDA(x1, y1, x2, y2) {
   let dx = x2 - x1;
   let dy = y2 - y1;
   let steps = Math.max(Math.abs(dx), Math.abs(dy));
@@ -19,8 +20,7 @@ function DDA(x1, y1, x2, y2) {
     y += yIncrement;
   }
 }`,
-  bresenham: `
-function bresenham(x1, y1, x2, y2) {
+  bresenham: `function bresenham(x1, y1, x2, y2) {
   let dx = Math.abs(x2 - x1);
   let dy = Math.abs(y2 - y1);
   let p = 2 * dy - dx;
@@ -50,8 +50,7 @@ function bresenham(x1, y1, x2, y2) {
     plot(x, y);
   }
 }`,
-  circle: `
-function midpointCircle(x0, y0, radius) {
+  circle: `function midpointCircle(x0, y0, radius) {
   let x = radius;
   let y = 0;
   let p = 1 - radius;
@@ -69,8 +68,7 @@ function midpointCircle(x0, y0, radius) {
     plotCirclePoints(x0, y0, x, y);
   }
 }`,
-  ellipse: `
-function midpointEllipse(xCenter, yCenter, rx, ry) {
+  ellipse: `function midpointEllipse(xCenter, yCenter, rx, ry) {
   let x = 0;
   let y = ry;
   let p1 = Math.pow(ry, 2) - Math.pow(rx, 2) * ry + 0.25 * Math.pow(rx, 2);
@@ -98,8 +96,7 @@ function midpointEllipse(xCenter, yCenter, rx, ry) {
     }
   }
 }`,
-  scanLine: `
-function scanLineFill(polygon, imageWidth, imageHeight) {
+  scanLine: `function scanLineFill(polygon, imageWidth, imageHeight) {
   let intersections = [];
   let filledPixels = [];
   for (let y = 0; y < imageHeight; y++) {
@@ -121,8 +118,7 @@ function scanLineFill(polygon, imageWidth, imageHeight) {
   }
   return filledPixels;
 }`,
-  edgeFill: `
-function edgeFill(polygon, imageWidth, imageHeight) {
+  edgeFill: `function edgeFill(polygon, imageWidth, imageHeight) {
   let filledPixels = [];
   for (let y = 0; y < imageHeight; y++) {
     let edgeStart = null;
@@ -146,8 +142,7 @@ function edgeFill(polygon, imageWidth, imageHeight) {
   }
   return filledPixels;
 }`,
-  seedFill: `
-function seedFill(x, y, targetColor, fillColor, image) {
+  seedFill: `function seedFill(x, y, targetColor, fillColor, image) {
   let stack = [[x, y]];
   let filledPixels = [];
   while (stack.length > 0) {
@@ -163,8 +158,7 @@ function seedFill(x, y, targetColor, fillColor, image) {
   }
   return filledPixels;
 }`,
-  floodFill: `
-function floodFill(x, y, targetColor, fillColor, image) {
+  floodFill: `function floodFill(x, y, targetColor, fillColor, image) {
   let stack = [[x, y]];
   let filledPixels = [];
   while (stack.length > 0) {
@@ -183,6 +177,13 @@ function floodFill(x, y, targetColor, fillColor, image) {
 };
 
 const GraphicsPrimitives = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+    });
+  }, []);
+
   return (
     <div className="main">
       <div className="w-[50vw] flex flex-col items-center justify-center space-y-16 px-6 py-12">
@@ -198,62 +199,60 @@ const GraphicsPrimitives = () => {
         </div>
 
         <div className="content-container space-y-36">
-          <section className="line-drawing">
+          <section className="line-drawing" data-aos="fade-up">
             <h2 className="section-heading">Line Drawing Algorithms</h2>
             <p className="section-description">
-              Explore methods to draw lines with different algorithms like DDA
-              and Bresenham’s Line Algorithm.
+              Explore methods to draw lines with different algorithms like DDA and Bresenham’s Line Algorithm.
             </p>
 
-            <h3 className="subheading mt-12">DDA Line Algorithm</h3>
-            <CodeBlock code={algorithms.DDA} />
+            <h3 className="subheading mt-12" data-aos="fade-up">DDA Line Algorithm</h3>
+            <CodeBlock code={algorithms.DDA} data-aos="fade-up" />
 
-            <h3 className="subheading mt-12">Bresenham's Line Algorithm</h3>
-            <CodeBlock code={algorithms.bresenham} />
+            <h3 className="subheading mt-12" data-aos="fade-up">Bresenham's Line Algorithm</h3>
+            <CodeBlock code={algorithms.bresenham} data-aos="fade-up" />
           </section>
 
-          <section className="circle-drawing">
+          <section className="circle-drawing" data-aos="fade-up">
             <h2 className="section-heading">Circle Drawing Algorithm</h2>
             <p className="section-description">
               Learn how to draw a circle using the Midpoint Circle Algorithm.
             </p>
 
-            <h3 className="subheading mt-12">Midpoint Circle Algorithm</h3>
-            <CodeBlock code={algorithms.circle} />
+            <h3 className="subheading mt-12" data-aos="fade-up">Midpoint Circle Algorithm</h3>
+            <CodeBlock code={algorithms.circle} data-aos="fade-up" />
           </section>
 
-          <section className="ellipse-drawing">
+          <section className="ellipse-drawing" data-aos="fade-up">
             <h2 className="section-heading">Ellipse Drawing Algorithm</h2>
             <p className="section-description">
               Learn how to draw ellipses with the Midpoint Ellipse Algorithm.
             </p>
 
-            <h3 className="subheading mt-12">Midpoint Ellipse Algorithm</h3>
-            <CodeBlock code={algorithms.ellipse} />
+            <h3 className="subheading mt-12" data-aos="fade-up">Midpoint Ellipse Algorithm</h3>
+            <CodeBlock code={algorithms.ellipse} data-aos="fade-up" />
           </section>
 
-          <section className="polygon-filling">
+          <section className="polygon-filling" data-aos="fade-up">
             <h2 className="section-heading">Polygon Filling Algorithms</h2>
             <p className="section-description">
-              Explore various techniques like scan-line, edge-fill, and
-              flood-fill for filling polygons.
+              Explore various techniques like scan-line, edge-fill, and flood-fill for filling polygons.
             </p>
 
-            <h3 className="subheading mt-12">Scan Line Filling Algorithm</h3>
-            <CodeBlock code={algorithms.scanLine} />
+            <h3 className="subheading mt-12" data-aos="fade-up">Scan Line Filling Algorithm</h3>
+            <CodeBlock code={algorithms.scanLine} data-aos="fade-up" />
 
-            <h3 className="subheading mt-12">Edge Fill Algorithm</h3>
-            <CodeBlock code={algorithms.edgeFill} />
+            <h3 className="subheading mt-12" data-aos="fade-up">Edge Fill Algorithm</h3>
+            <CodeBlock code={algorithms.edgeFill} data-aos="fade-up" />
 
-            <h3 className="subheading mt-12">Seed Fill Algorithm</h3>
-            <CodeBlock code={algorithms.seedFill} />
+            <h3 className="subheading mt-12" data-aos="fade-up">Seed Fill Algorithm</h3>
+            <CodeBlock code={algorithms.seedFill} data-aos="fade-up" />
 
-            <h3 className="subheading mt-12">Flood Fill Algorithm</h3>
-            <CodeBlock code={algorithms.floodFill} />
+            <h3 className="subheading mt-12" data-aos="fade-up">Flood Fill Algorithm</h3>
+            <CodeBlock code={algorithms.floodFill} data-aos="fade-up" />
           </section>
         </div>
 
-        <div className="learn-more">
+        <div className="learn-more" data-aos="fade-up">
           <h3 className="section-heading">If you want to learn more</h3>
           <ul className="links-list">
             <li>
@@ -266,56 +265,7 @@ const GraphicsPrimitives = () => {
                 Basic Computer Graphics Primitives - TutorialsPoint
               </a>
             </li>
-            <li>
-              <a
-                href="https://learnopengl.com/Getting-started/Hello-Triangle"
-                className="custom-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Basic OpenGL Primitives: Drawing a Triangle - LearnOpenGL
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.khanacademy.org/computing/computer-programming/programming/computer-graphics/a/graphics-primitives"
-                className="custom-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Graphics Primitives - Khan Academy
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.cs.umd.edu/class/spring2016/cmsc427/notes/graphicsPrimitives.pdf"
-                className="custom-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Graphics Primitives Lecture Notes - University of Maryland
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.cs.rit.edu/~dnn/courses/cs420/lectures/lecture02.pdf"
-                className="custom-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Computer Graphics Primitives - RIT University
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.tutorialsclub.com/computer-graphics-primitives/"
-                className="custom-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Understanding Graphics Primitives - TutorialsClub
-              </a>
-            </li>
+            {/* Additional links */}
           </ul>
         </div>
       </div>
