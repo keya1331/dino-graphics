@@ -164,7 +164,7 @@ Sh = [ 1  shxy  shxz  0 ]
           <p className="section-description text-lg">
             Transformation matrices are used to perform the various transformations. These matrices include:
           </p>
-          <ul className="matrices-list space-y-4 text-gray-300">
+          <ul className="matrices-list space-y-4 text-gray-300 text-left">
             <li className="text-lg">
               <strong>2D Transformation Matrix:</strong> Used for translating, rotating, scaling, and shearing in 2D.
             </li>
@@ -176,7 +176,7 @@ Sh = [ 1  shxy  shxz  0 ]
 
         <section className="applications">
           <h2 className="section-heading text-2xl font-semibold">Applications</h2>
-          <ul className="applications-list space-y-4">
+          <ul className="applications-list space-y-4 text-left">
             <li className="text-lg">
               <strong>Animation:</strong> Smooth transitions of objects using transformations.
             </li>

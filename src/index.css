@@ -33,7 +33,7 @@
 }
 
 .section-description {
-  @apply text-lg text-[#c5d3e0] leading-relaxed mb-8;
+  @apply text-lg text-[#c5d3e0] leading-relaxed mb-8 text-left;
 }
 
 .benefits-list,
