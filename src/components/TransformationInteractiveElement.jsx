@@ -49,11 +49,9 @@ const TransformationsInteractiveElement = () => {
 
   return (
     <div className="flex w-full h-full bg-gray-900 text-gray-100">
-      {/* Left panel for controls */}
       <div className="w-1/3 h-full flex flex-col justify-start px-6 space-y-6">
         <h2 className="text-lg font-semibold text-blue-500">Transformations</h2>
 
-        {/* Uniform Scaling Option */}
         <div className="flex items-center space-x-2">
           <label className="text-sm">Uniform Scale</label>
           <input
@@ -64,7 +62,6 @@ const TransformationsInteractiveElement = () => {
           />
         </div>
 
-        {/* Scale Slider */}
         <div className="flex flex-col space-y-2">
           <label className="text-sm">Scale</label>
           <input
@@ -78,7 +75,6 @@ const TransformationsInteractiveElement = () => {
           />
         </div>
 
-        {/* Rotation Slider */}
         <div className="flex flex-col space-y-2">
           <label className="text-sm">Rotation</label>
           <input
@@ -92,7 +88,6 @@ const TransformationsInteractiveElement = () => {
           />
         </div>
 
-        {/* Translation Slider */}
         <div className="flex flex-col space-y-2">
           <label className="text-sm">Translation</label>
           <input
@@ -106,7 +101,6 @@ const TransformationsInteractiveElement = () => {
           />
         </div>
 
-        {/* Axis Selection Buttons */}
         <div className="flex space-x-1">
           {["x", "y", "z"].map((ax) => (
             <button
@@ -121,7 +115,6 @@ const TransformationsInteractiveElement = () => {
           ))}
         </div>
 
-        {/* Reset Button */}
         <div className="mt-4">
           <button
             onClick={handleReset}
@@ -132,11 +125,9 @@ const TransformationsInteractiveElement = () => {
         </div>
       </div>
 
-      {/* Right viewport for 3D rendering */}
       <div className="w-2/3 h-[calc(100%-50px)]">
         <Canvas camera={{ position: [7, 2, 5], fov: 70 }}>
           <group position={[0, 0, 0]}>
-            {/* Showing Axes */}
             <line>
               <bufferGeometry>
                 <bufferAttribute
@@ -172,7 +163,6 @@ const TransformationsInteractiveElement = () => {
             </line>
           </group>
 
-          {/* Dinosaur Group */}
           <group
             position={[translation.x, translation.y, translation.z]}
             rotation={[rotation.x, rotation.y, rotation.z]}
@@ -182,10 +172,8 @@ const TransformationsInteractiveElement = () => {
             <primitive object={scene} />
           </group>
 
-          {/* Grid Helper for Coordinate Planes - Very Large Grid with More Squares */}
           <gridHelper args={[1000, 1000, 0xaaaaaa, 0x555555]} position={[0, 0, 0]} />
 
-          {/* Ambient and directional light */}
           <ambientLight intensity={0.7} />
           <directionalLight intensity={1.7} position={[0, 0, 5]} />
           <directionalLight intensity={1.7} position={[0, 5, 0]} />
