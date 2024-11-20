@@ -1,13 +1,11 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
-import * as THREE from "three"; // Import Three.js for matrix manipulation
 
 const TransformationsInteractiveElement = () => {
   const [scale, setScale] = useState({ x: 1, y: 1, z: 1 });
   const [rotation, setRotation] = useState({ x: 0, y: 0, z: 0 });
   const [translation, setTranslation] = useState({ x: 0, y: 0, z: 0 });
-  const [shearing, setShearing] = useState({ x: 0, y: 0, z: 0 });
   const [axis, setAxis] = useState("x");
   const [uniformScale, setUniformScale] = useState(false);
 
@@ -32,9 +30,6 @@ const TransformationsInteractiveElement = () => {
       case "translation":
         setTranslation((prev) => ({ ...prev, [axis]: value }));
         break;
-      case "shearing":
-        setShearing((prev) => ({ ...prev, [axis]: value }));
-        break;
       default:
         break;
     }
@@ -44,28 +39,13 @@ const TransformationsInteractiveElement = () => {
     setAxis(newAxis);
   };
 
-  // Apply shear matrix to geometry
-  useEffect(() => {
-    if (modelRef.current) {
-      const shearMatrix = new THREE.Matrix4();
-
-      // Apply shearing based on user input
-      shearMatrix.set(
-        1, shearing.x, shearing.x, 0,
-        shearing.y, 1, shearing.y, 0,
-        shearing.z, shearing.z, 1, 0,
-        0, 0, 0, 1
-      );
-
-      // Apply shear matrix only once when shearing changes
-      modelRef.current.traverse((child) => {
-        if (child.isMesh) {
-          // Reset the geometry's transformation before applying the shear
-          child.geometry.applyMatrix4(shearMatrix); 
-        }
-      });
-    }
-  }, [shearing]);  // This effect runs only when `shearing` values change
+  const handleReset = () => {
+    setScale({ x: 1, y: 1, z: 1 });
+    setRotation({ x: 0, y: 0, z: 0 });
+    setTranslation({ x: 0, y: 0, z: 0 });
+    setUniformScale(false);
+    setAxis("x");
+  };
 
   return (
     <div className="flex w-full h-full bg-gray-900 text-gray-100">
@@ -126,20 +106,6 @@ const TransformationsInteractiveElement = () => {
           />
         </div>
 
-        {/* Shearing Slider */}
-        <div className="flex flex-col space-y-2">
-          <label className="text-sm">Shearing</label>
-          <input
-            type="range"
-            min="0"
-            max="3"
-            step="0.1"
-            value={shearing[axis]}
-            onChange={(e) => handleSliderChange(e, "shearing")}
-            className="h-1 w-full max-w-[350px] rounded-full bg-gray-700 focus:outline-none appearance-none accent-blue-500"
-          />
-        </div>
-
         {/* Axis Selection Buttons */}
         <div className="flex space-x-1">
           {["x", "y", "z"].map((ax) => (
@@ -153,6 +119,16 @@ const TransformationsInteractiveElement = () => {
               {ax.toUpperCase()}
             </button>
           ))}
+        </div>
+
+        {/* Reset Button */}
+        <div className="mt-4">
+          <button
+            onClick={handleReset}
+            className="px-6 py-2 bg-red-600 text-white rounded-full hover:bg-red-500"
+          >
+            Reset
+          </button>
         </div>
       </div>
 
