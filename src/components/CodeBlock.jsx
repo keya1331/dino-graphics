@@ -26,3 +26,4 @@ const CodeBlock = ({ code }) => {
 };
 
 export default CodeBlock;
+

@@ -1,0 +1,41 @@
+.dino-path-clipping {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .canvas-container {
+    position: relative;
+    margin: 20px 0;
+    display: inline-block;
+  }
+  
+  .dino-canvas {
+    background-color: #0B2640;
+    border: 2px solid #B9DDFF;
+    border-radius: 10px;
+  }
+  
+  .controls {
+    margin: 20px;
+  }
+  
+  button {
+    background-color: #B9DDFF;
+    color: #0B2640;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #A0C8FF;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
