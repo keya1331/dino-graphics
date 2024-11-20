@@ -18,8 +18,8 @@ const Introduction = () => (
 
       <div className="content-container space-y-16">
         <section className="overview animate-fadeIn">
-          <h2 className="section-heading">Overview</h2>
-          <p className="section-description">
+          <h2 className="section-heading text-left">Overview</h2>
+          <p className="section-description text-left">
             Computer Graphics is the field that transforms data into visual
             representations, enabling the creation, manipulation, and display of
             visual information. It plays a key role in fields like design,
@@ -28,18 +28,18 @@ const Introduction = () => (
         </section>
 
         <section className="classification animate-fadeIn">
-          <h2 className="section-heading">Classification</h2>
+          <h2 className="section-heading text-left">Classification</h2>
           <div className="classification-types space-y-8">
             <div className="classification-item animate-slideInLeft">
-              <h3 className="subheading">Interactive Graphics</h3>
-              <p className="section-description">
+              <h3 className="subheading text-left">Interactive Graphics</h3>
+              <p className="section-description text-left">
                 Enables user-controlled content and outcomes, such as video
                 games and simulations.
               </p>
             </div>
             <div className="classification-item animate-slideInRight">
-              <h3 className="subheading">Non-Interactive Graphics</h3>
-              <p className="section-description">
+              <h3 className="subheading text-left">Non-Interactive Graphics</h3>
+              <p className="section-description text-left">
                 Pre-rendered visuals where no interaction is required, often
                 seen in presentations and animated movies.
               </p>
@@ -48,8 +48,10 @@ const Introduction = () => (
         </section>
 
         <section className="characteristics animate-fadeIn">
-          <h2 className="section-heading">Characteristics and Advantages</h2>
-          <ul className="benefits-list">
+          <h2 className="section-heading text-left">
+            Characteristics and Advantages
+          </h2>
+          <ul className="benefits-list list-disc list-inside text-left">
             <li>Visualization of abstract data into comprehensible forms.</li>
             <li>Real-time interaction for dynamic user experiences.</li>
             <li>High realism and accuracy for simulations and modeling.</li>
@@ -58,26 +60,30 @@ const Introduction = () => (
         </section>
 
         <section className="coordinates animate-fadeIn">
-          <h2 className="section-heading">Coordinate Representation</h2>
-          <p className="section-description">
+          <h2 className="section-heading text-left">
+            Coordinate Representation
+          </h2>
+          <p className="section-description text-left">
             Coordinate systems define object placement. Graphics use both 2D
             Cartesian coordinates (x, y) and 3D Cartesian coordinates (x, y, z).
           </p>
         </section>
 
         <section className="scan-methods animate-fadeIn">
-          <h2 className="section-heading">Raster Scan & Random Scan Methods</h2>
+          <h2 className="section-heading text-left">
+            Raster Scan & Random Scan Methods
+          </h2>
           <div className="scan-types space-y-8">
             <div className="scan-item animate-slideInLeft">
-              <h3 className="subheading">Raster Scan</h3>
-              <p className="section-description">
+              <h3 className="subheading text-left">Raster Scan</h3>
+              <p className="section-description text-left">
                 Common in displays, draws the screen line-by-line from top to
                 bottom.
               </p>
             </div>
             <div className="scan-item animate-slideInRight">
-              <h3 className="subheading">Random Scan</h3>
-              <p className="section-description">
+              <h3 className="subheading text-left">Random Scan</h3>
+              <p className="section-description text-left">
                 Used in vector displays, draws lines directly between specified
                 points for high precision.
               </p>
@@ -89,18 +95,20 @@ const Introduction = () => (
         </section>
 
         <section className="video-basics animate-fadeIn">
-          <h2 className="section-heading">Video Basics</h2>
-          <p className="section-description">
+          <h2 className="section-heading text-left">Video Basics</h2>
+          <p className="section-description text-left">
             Covers how images are displayed on screens, including aspects like
             frame rates, resolution, and color depth.
           </p>
         </section>
 
-        <section className="devices animate-fadeIn">
-          <h2 className="section-heading">Display and Interactive Devices</h2>
+        <section className="devices animate-fadeIn text-left">
+          <h2 className="section-heading text-left">
+            Display and Interactive Devices
+          </h2>
           <div className="device-list space-y-8">
-            <h3 className="subheading">Display Devices:</h3>
-            <ul className="devices">
+            <h3 className="subheading text-left">Display Devices:</h3>
+            <ul className="devices list-disc list-inside text-left">
               <li>
                 <strong>CRT:</strong> Older tech using electron beams.
               </li>
@@ -113,8 +121,8 @@ const Introduction = () => (
               </li>
             </ul>
 
-            <h3 className="subheading">Interactive Devices:</h3>
-            <ul className="devices">
+            <h3 className="subheading text-left">Interactive Devices:</h3>
+            <ul className="devices list-disc list-inside text-left">
               <li>
                 Input tools like mouse, keyboard, stylus for screen
                 manipulation.
@@ -124,30 +132,32 @@ const Introduction = () => (
         </section>
 
         <section className="digital-images animate-fadeIn">
-          <h2 className="section-heading">
+          <h2 className="section-heading text-left">
             Digital Images, Image Formation, Representation, and Modeling
           </h2>
-          <p className="section-description">
+          <p className="section-description text-left">
             <strong>Digital Images:</strong> Composed of pixels, each
             representing a portion of the image.
           </p>
-          <p className="section-description">
+          <p className="section-description text-left">
             <strong>Image Formation:</strong> Process by which digital sensors
             or algorithms capture and display images.
           </p>
-          <p className="section-description">
+          <p className="section-description text-left">
             <strong>Image Representation:</strong> Encodes images as bitmap or
             vector data.
           </p>
-          <p className="section-description">
+          <p className="section-description text-left">
             <strong>Modeling:</strong> Builds digital object representations for
             animation and visualization.
           </p>
         </section>
 
         <section className="applications animate-fadeIn">
-          <h2 className="section-heading">Overview of Applications</h2>
-          <ul className="applications-list">
+          <h2 className="section-heading text-left">
+            Overview of Applications
+          </h2>
+          <ul className="applications-list list-disc list-inside text-left">
             <li>
               <strong>Entertainment:</strong> Animation, visual effects, gaming
             </li>
@@ -165,8 +175,10 @@ const Introduction = () => (
         </section>
 
         <section className="software animate-fadeIn">
-          <h2 className="section-heading">Graphics Libraries & Software</h2>
-          <p className="section-description">
+          <h2 className="section-heading text-left">
+            Graphics Libraries & Software
+          </h2>
+          <p className="section-description text-left">
             Libraries like <strong>OpenGL</strong>, <strong>WebGL</strong>, and{" "}
             <strong>DirectX</strong> support graphics development. Software like{" "}
             <strong>Photoshop</strong>, <strong>Blender</strong>, and{" "}
@@ -176,8 +188,10 @@ const Introduction = () => (
         </section>
 
         <div className="learn-more animate-fadeIn">
-          <h3 className="section-heading">If you want to learn more</h3>
-          <ul className="links-list">
+          <h3 className="section-heading">
+            If you want to learn more
+          </h3>
+          <ul className="links-list list-disc list-inside text-left">
             <li>
               <a
                 href="https://www.geeksforgeeks.org/computer-graphics-2/"
