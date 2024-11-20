@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import SectionPage from "../components/TemplatePageHeader";
 import TransformationInteractiveElement from "../components/TransformationInteractiveElement";
-import AOS from "aos"; // Make sure to install AOS with npm or yarn
-import "aos/dist/aos.css"; // Import the AOS styles
+import AOS from "aos"; 
+import "aos/dist/aos.css"; 
 
 const Transformations = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000 }); // Initialize AOS with a duration for smooth animations
+    AOS.init({ duration: 1000 }); 
   }, []);
 
   return (
@@ -17,7 +17,7 @@ const Transformations = () => {
           sectionNumber="03"
           sectionDescription="Explores the fundamental concepts of 2D and 3D transformations such as translation, scaling, rotation, and shearing."
           currentSection="2D and 3D Transformations"
-          data-aos="fade-up" // Adding fade-up animation to this section
+          data-aos="fade-up" 
         />
 
         <div className="w-[100%] h-[80vh] mx-auto" data-aos="fade-up">
