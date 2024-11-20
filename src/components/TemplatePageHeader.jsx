@@ -57,29 +57,30 @@ const TemplatePageHeader = ({ sectionTitle, sectionNumber, sectionDescription, c
           />
         </div>
 
-        <div className="navigation-arrows flex justify-between w-full fixed bottom-10 px-10 z-50">
-          <button
-            className="text-[#e8f3fe] text-3xl"
-            onClick={handlePrevious}
-          >
-            <img
-              src="/assets/left-arrow.png"
-              alt="Previous"
-              className="w-10 h-10"
-            />
-          </button>
+        <div className="navigation-arrows flex justify-between w-full fixed top-1/2 px-10 z-50 transform -translate-y-1/2">
+  <button
+    className="text-[#e8f3fe] text-3xl"
+    onClick={handlePrevious}
+  >
+    <img
+      src="/assets/left-arrow.png"
+      alt="Previous"
+      className="w-10 h-10"
+    />
+  </button>
 
-          <button
-            className="text-[#e8f3fe] text-3xl"
-            onClick={handleNext}
-          >
-            <img
-              src="/assets/right-arrow.png"
-              alt="Next"
-              className="w-10 h-10"
-            />
-          </button>
-        </div>
+  <button
+    className="text-[#e8f3fe] text-3xl"
+    onClick={handleNext}
+  >
+    <img
+      src="/assets/right-arrow.png"
+      alt="Next"
+      className="w-10 h-10"
+    />
+  </button>
+</div>
+
       </div>
   );
 };
