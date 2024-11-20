@@ -1,18 +1,17 @@
 import React, { useEffect } from "react";
 import Chaptertitle from "../components/Chaptertitle";
 import HomeIndominus from "../components/HomePageIndominus.jsx";
-import AOS from "aos"; // Import AOS library
-import "aos/dist/aos.css"; // Import AOS styles
+import AOS from "aos"; 
+import "aos/dist/aos.css"; 
 
 const HomePage = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000, once: true }); // Initialize AOS with a duration and ensure animations trigger only once
+    AOS.init({ duration: 1000, once: true }); 
   }, []);
 
   return (
     <div className="main">
       <div className="container flex items-center justify-center mx-40 flex-col">
-        {/* Hero Section */}
         <div
           className="hero pt-40 pb-40 self-start flex items-center justify-center flex-col gap-3 place-self-end"
           data-aos="fade-up"
@@ -41,9 +40,7 @@ const HomePage = () => {
           </p>
         </div>
 
-        {/* Navigator Section */}
         <div className="navigator flex">
-          {/* Sidebar */}
           <div
             className="sticky top-0 w-[30vw] h-[100vh]"
             data-aos="fade-right"
@@ -51,7 +48,6 @@ const HomePage = () => {
             <HomeIndominus />
           </div>
 
-          {/* Chapter Titles */}
           <div className="titles flex flex-col justify-center items-center py-24 px-12 gap-12">
             <div
               className="title1 flex w-full items-center justify-start"

@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
-import "aos/dist/aos.css"; // Import the AOS CSS for animations
+import "aos/dist/aos.css";
 import SectionPage from "../components/TemplatePageHeader";
 import IntroductionInteractiveElement from "../components/IntroductionInteractiveElement";
 
 const Introduction = () => {
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animation duration (milliseconds)
-      easing: "ease-in-out", // Easing function
-      once: true, // Animation happens only once
+      duration: 1000, 
+      easing: "ease-in-out",
+      once: true, 
     });
   }, []);
 

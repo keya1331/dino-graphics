@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import ClippingComponent from "../components/ClippingComponent";
 import DinoPathClipping from "../components/DinoPathClipping";
 
-// Define the clipping boundary (Viewport)
 const VIEWPORT = {
   xMin: 150,
   yMin: 150,

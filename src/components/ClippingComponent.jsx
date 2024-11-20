@@ -57,10 +57,9 @@ const ClippingComponent = () => {
           overflow: 'hidden',
           borderRadius: '10px',
           transform: `scale(${zoom})`,
-          transformOrigin: 'top left', // Ensures zoom occurs from the top left corner
+          transformOrigin: 'top left',
         }}
       >
-        {/* Clip Window */}
         <div
           className="clip-window"
           style={{
@@ -75,7 +74,6 @@ const ClippingComponent = () => {
           }}
         ></div>
 
-        {/* Path Clipping */}
         <div
           className={`dino-path ${isLineClipping ? (clipPath() ? 'clipped' : '') : ''}`}
           style={{
@@ -90,7 +88,6 @@ const ClippingComponent = () => {
           }}
         ></div>
 
-        {/* Placeholder for Dinosaur */}
         <div className="dinosaur" style={{ position: 'absolute', bottom: '10px', left: '40%' }}>
           🦖
         </div>

@@ -7,12 +7,10 @@ const DinoModel = () => {
   const { scene } = useGLTF("/assets/jw_alive_blue.glb");
   const modelRef = useRef();
 
-  // Rotate the model over time
   useEffect(() => {
     const animate = () => {
       if (modelRef.current) {
-        // Rotate the model around the Y-axis (vertical axis)
-        modelRef.current.rotation.y += 0.005; // Adjust speed here
+        modelRef.current.rotation.y += 0.005;
       }
       requestAnimationFrame(animate);
     };

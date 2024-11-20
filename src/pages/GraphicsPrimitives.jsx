@@ -265,7 +265,6 @@ const GraphicsPrimitives = () => {
                 Basic Computer Graphics Primitives - TutorialsPoint
               </a>
             </li>
-            {/* Additional links */}
           </ul>
         </div>
       </div>

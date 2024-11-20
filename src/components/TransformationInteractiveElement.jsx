@@ -25,7 +25,7 @@ const TransformationsInteractiveElement = () => {
         }
         break;
       case "rotation":
-        setRotation((prev) => ({ ...prev, [axis]: value * 0.5 })); // Reduced sensitivity
+        setRotation((prev) => ({ ...prev, [axis]: value * 0.5 }));
         break;
       case "translation":
         setTranslation((prev) => ({ ...prev, [axis]: value }));

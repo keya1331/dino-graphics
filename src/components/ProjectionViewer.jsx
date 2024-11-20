@@ -19,25 +19,24 @@ const projections = [
 const ProjectionViewer = () => {
   const [selectedProjection, setSelectedProjection] = useState("Perspective");
 
-  // Adjust camera settings based on the projection
   const getCameraProps = () => {
     switch (selectedProjection) {
       case "Parallel":
-        return { position: [0, 5, 10], fov: 1 }; // Narrow field of view for parallel projection
+        return { position: [0, 5, 10], fov: 1 }; 
       case "Orthographic":
-        return { position: [0, 5, 10], fov: 10 }; // Simulate orthographic behavior
+        return { position: [0, 5, 10], fov: 10 };
       case "Isometric":
-        return { position: [5, 5, 5], fov: 50 }; // Isometric-like position
+        return { position: [5, 5, 5], fov: 50 }; 
       case "Dimetric":
-        return { position: [5, 7, 5], fov: 50 }; // Dimetric variation
+        return { position: [5, 7, 5], fov: 50 }; 
       case "Trimetric":
-        return { position: [5, 6, 7], fov: 50 }; // Trimetric variation
+        return { position: [5, 6, 7], fov: 50 }; 
       case "Oblique":
-        return { position: [7, 5, 5], fov: 75 }; // Slight oblique angle
+        return { position: [7, 5, 5], fov: 75 };
       case "Cavalier":
-        return { position: [5, 5, 7], fov: 50 }; // Cavalier projection
+        return { position: [5, 5, 7], fov: 50 };
       case "Cabinet":
-        return { position: [6, 5, 5], fov: 50 }; // Cabinet projection
+        return { position: [6, 5, 5], fov: 50 };
       case "One-Point Perspective":
         return { position: [0, 0, 10], fov: 75 };
       case "Two-Point Perspective":
@@ -45,11 +44,10 @@ const ProjectionViewer = () => {
       case "Three-Point Perspective":
         return { position: [10, 10, 10], fov: 75 };
       default:
-        return { position: [0, 5, 10], fov: 50 }; // Default to Perspective
+        return { position: [0, 5, 10], fov: 50 };
     }
   };
 
-  // Load the dinosaur model
   const Dinosaur = () => {
     const { scene } = useGLTF("public/assets/raptor_dinosaur_indoraptor.glb");
     return <primitive object={scene} scale={0.3} />;
