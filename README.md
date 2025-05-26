@@ -47,4 +47,4 @@ a visual walkthrough of the dino graphics learning platform ↓
 
 ---
 
-*graphics can teach — when the interface roars.* 
+*graphics can teach, when the interface roars.* 
